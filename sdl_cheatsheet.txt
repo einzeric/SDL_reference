@@ -1,0 +1,19 @@
+//Return value: 0 on success, negative int on error
+int SDL_RenderCopy(SDL_Renderer * renderer,     //Rendering context
+                   SDL_Texture * texture,       //Texture to be rendered
+                   const SDL_Rect * srcrect,    //Determine the area on the texture to be rendered. NULL for whole texture.
+                   const SDL_Rect * dstrect);   //Determine the area in the rendering context where the texture is rendered. NULL for the entire rendering context.
+                   
+//Return value: NULL on failure, ptr to texture otherwise
+SDL_Texture * SDL_CreateTexture(SDL_Renderer * renderer,    //Rendering context
+                                Uint32 format,              //Enum in SDL_PixelFormatEnum
+                                int access,                 //Enum in SDL_TextureAccess
+                                int w,                      //Texture width
+                                int h);                     //Texture height
+                                
+//Load an image from a file and put it into a surface
+SDL_Surface *IMG_Load(const char *file)
+
+//Return value: NULL on failure, ptr to texture otherwise
+SDL_Texture * SDL_CreateTextureFromSurface(SDL_Renderer * renderer, //Rendering context
+                                           SDL_Surface * surface);  //Surface containing data for the texture

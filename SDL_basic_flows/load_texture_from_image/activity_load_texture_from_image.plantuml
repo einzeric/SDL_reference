@@ -1,0 +1,22 @@
+@startuml
+
+start
+skinparam handwritten true
+skinparam ActivityBackgroundColor YellowGreen
+skinparam ActivityBorderColor Green
+skinparam ActivityDiamondBorderColor DarkGoldenRod
+skinparam ActivityDiamondBackgroundColor Gold
+skinparam ArrowColor MidnightBlue
+
+:loadedImage = IMG_Load(image_path);
+
+if (loadedImage) then (not null)
+  :SDL_CreateTextureFromSurface(renderingContext, loadedImage);
+else (null)
+  :handle error;
+  end
+endif
+:SDL_FreeSurface(loadedImage);
+stop
+
+@enduml
